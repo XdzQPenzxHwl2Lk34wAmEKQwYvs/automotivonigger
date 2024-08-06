@@ -1,4 +1,4 @@
-print("visualsense execute started."),
+print("visualsense execute started.")
 local SYC = {
     Modules = {
         UI = {}
