@@ -3769,6 +3769,8 @@ local nigga = (function() -- src/Lua/loader.lua
                 	[16033173781] = current_mouse_arg or nil,
                     --ar hood
                     [17502123056] = "UpdateMousePos" or nil,
+                    --flame hood
+                    [15644861772] = "UpdateMousePos" or nil,
                     -- der hood
                 	[17895097441] = "UpdateMousePosition" or nil,
                     [17895262040] = "UpdateMousePosition" or nil,
