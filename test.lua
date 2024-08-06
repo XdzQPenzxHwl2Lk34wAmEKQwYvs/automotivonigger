@@ -6253,7 +6253,7 @@ local nigga = (function() -- src/Lua/loader.lua
                                 end })
                                 macro_misc:Slider({ title = "macro speed", suffix = "", min = 1, max = 100, default = 1,float = 1, callback = function (value)
                                     macro.speed = value
-                                end }))
+                                end })
                                 macro_misc:Dropdown({ title = "macro type", values = {"first person", "third person"}, default = "first person", multi = false, callback = function (value)
                                     macro.type = value
                                 end })
