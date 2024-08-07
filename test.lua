@@ -519,6 +519,7 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
             end
         end
     end
+end
 end)
 
 
