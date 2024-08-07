@@ -55,7 +55,7 @@ local Color3New, Color3FromRGB, Color3FromHSV = Color3.new, Color3.fromRGB, Colo
 local InstanceNew = Instance.new
 local TaskDelay, TaskSpawn, TaskWait = task.delay, task.spawn, task.wait
 local RaycastParamsNew = RaycastParams.new
-local DrawingNew = Drawing.new
+--local DrawingNew = Drawing.new
 
 -- importing of files, this is bundled with a bundler.
 local ModuleHandler = (function() -- src/Lua/Modules/ModuleHandler.lua
