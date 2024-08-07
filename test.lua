@@ -1,3 +1,4 @@
+
 getgenv().VisualSense = {
     ["Options"] = {
         ["Version"] = "beta v2", -- // Dont touch this is to make sure your using the correct table
