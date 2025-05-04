@@ -1328,48 +1328,6 @@ do
         client.exec("play ui\\beepclear")
     end
 
-    configs.import = function()
-        local clipboard_data = clipboard.get()
-
-        if clipboard_data == nil then
-            print_raw("An error occured with config!")
-            client.exec("play resource\\warning.wav")
-            return
-        end
-
-        local decompiled = configs.decompile(clipboard_data)
-
-        if decompiled == nil then
-            print_raw("An error occured with config!")
-            client.exec("play resource\\warning.wav")
-            return
-        end
-
-        local name = decompiled.name
-        local author = decompiled.author
-        local data = decompiled.data
-
-        if #configs.db > configs.maximum_count then
-            print_raw("Too much configs!")
-            client.exec("play resource\\warning.wav")
-            return
-        end
-
-        table.insert(
-            configs.db,
-            {
-                name = name,
-                author = author,
-                data = data
-            }
-        )
-
-        db.write("configs", configs.db)
-
-        print_raw(("%s successfully imported!"):format(name))
-        client.exec("play ui\\beepclear")
-    end
-
     configs.update_list = function()
         local ref = menu.refs["configs"]["configs_list"]
 
@@ -1432,6 +1390,47 @@ do
         end
     )("configs", "config_delete", ts.is_home)
 
+    configs.import = function()
+        local clipboard_data = clipboard.get()
+
+        if clipboard_data == nil then
+            print_raw("An error occured with config!")
+            client.exec("play resource\\warning.wav")
+            return
+        end
+
+        local decompiled = configs.decompile(clipboard_data)
+
+        if decompiled == nil then
+            print_raw("An error occured with config!")
+            client.exec("play resource\\warning.wav")
+            return
+        end
+
+        local name = decompiled.name
+        local author = decompiled.author
+        local data = decompiled.data
+
+        if #configs.db > configs.maximum_count then
+            print_raw("Too much configs!")
+            client.exec("play resource\\warning.wav")
+            return
+        end
+
+        table.insert(
+            configs.db,
+            {
+                name = name,
+                author = author,
+                data = data
+            }
+        )
+
+        db.write("configs", configs.db)
+
+        print_raw(("%s successfully imported!"):format(name))
+        client.exec("play ui\\beepclear")
+    end
     menu.button(groups.antiaim)(
         "Export",
         function()
