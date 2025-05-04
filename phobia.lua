@@ -1353,14 +1353,6 @@ do
     )("configs", "config_create", ts.is_home)
 
     menu.button(groups.antiaim)(
-        "Import",
-        function()
-            configs.import()
-            configs.update_list()
-        end
-    )("configs", "config_import", ts.is_home)
-
-    menu.button(groups.antiaim)(
         "Load",
         function()
             local key = menu.elements["configs"]["configs_list"] + 1
@@ -1431,6 +1423,14 @@ do
         print_raw(("%s successfully imported!"):format(name))
         client.exec("play ui\\beepclear")
     end
+    menu.button(groups.antiaim)(
+        "Import",
+        function()
+            configs.import()
+            configs.update_list()
+        end
+    )("configs", "config_import", ts.is_home)
+    
     menu.button(groups.antiaim)(
         "Export",
         function()
