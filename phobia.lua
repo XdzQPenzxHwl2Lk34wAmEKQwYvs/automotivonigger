@@ -1463,8 +1463,8 @@ local antiaim = {
         "Standing",
         "Running",
         "Walking",
-        "Crouching",
-        "Sneaking",
+        "Crouch",
+        "Crouch & Move",
         "Air",
         "Air & Crouch",
         "Freestanding",
@@ -1647,10 +1647,10 @@ do
             ["Standing"] = function()
                 return my.state == my.states.standing
             end,
-            ["Crouching"] = function()
+            ["Crouch"] = function()
                 return my.state == my.states.crouch
             end,
-            ["Sneaking"] = function()
+            ["Crouch & Move"] = function()
                 return my.state == my.states.sneak
             end,
             ["Air"] = function()
@@ -1713,8 +1713,8 @@ do
             "  Conditions",
             {
                 "Standing",
-                "Crouching",
-                "Sneaking",
+                "Crouch",
+                "Crouch & Move",
                 "Air",
                 "Air & Crouch",
                 "Air Knife",
@@ -2232,7 +2232,7 @@ do
         end
 
         if
-            menu.elements["antiaim"]["allow_legacy_Freestanding"] and menu.refs["antiaim"]["freestanding"]:get() and
+            menu.elements["antiaim"]["allow_legacy_Freestanding"] and menu.refs["antiaim"]["freestanding_hotkey"]:get() and
                 antiaim.manuals.yaw_offset == 0
          then
             antiaim.state = my.states.freestanding
